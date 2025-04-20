@@ -19,7 +19,7 @@
   --secondary-color: #000;
   --accent-color: #eee;
   --hover-color: #444;
-  --visited-color: #E88137;
+  --visited-color: #2b1897;
 }
 
 /* === GLOBAL STYLES === */
@@ -325,6 +325,13 @@ nav > *:not(.dropdown-content) {
   margin: 0;
 }
 
+/* changing background and text color for song cards in dark mode */
+.dark-mode .song-card,
+.dark-mode .message p {
+  color: var(--text-color);
+  background-color: var(--primary-color);
+}
+
 /* Playlist-specific classes */
 .added-label {
   font-weight: bold;
@@ -372,8 +379,9 @@ nav > *:not(.dropdown-content) {
   display: none;
 }
 
-/* === MISC === */
+/* === THE IDEA === */
 
+/* styling the idea page cards */
 .message {
   text-align: center;
   font-family: sans-serif, "Times New Roman", Tahoma;
@@ -386,24 +394,93 @@ nav > *:not(.dropdown-content) {
   font-size: 20px;
   text-align: center;
   align-items: center;
+  align-content: center;
   background-color: #b5aec4;
   border-radius: 12px;
   padding: 20px;
   width: 100%;
 }
 
-.text {
-  color: var(--visited-color);
-  font-family: sans-serif, "Times New Roman", Tahoma;
-  padding-left: 20px;
-  font-size: 35px;
+/* default link styling for the idea page */
+.message a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.about {
-  color: var(--text-color);
-  font-family: sans-serif, "Times New Roman", Tahoma;
-  font-size: 18px;
+.message a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+/* link hover */
+.message a:hover {
+  color: var(--visited-color);
+  text-decoration: underline;
+}
+
+/* active link */
+.message a:active {
+  color: var(--hover-color);
+  text-decoration: underline;
+}
+
+/* visited link */
+.message a:visited {
+  color: var(--visited-color);
+}
+
+/* === MEET THE TEAM === */
+
+/* creating flex boxes and centering content on the team page */
+.meet-the-team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto; /* horizontal center */
+  text-align: left;
+  max-width: 1000px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* setting up team's pictures */
+.temp_pic {
+  display: flex;
+  align-items: center;
+  padding-bottom: 25px;
+}
+
+/* social icon spacing */
+.icons {
+  display: flex;
+  gap: 12px;
+  align-items: left;
+  justify-content: left;
+  margin-top: 5px;
+}
+
+/* create flexes for active icons */
+.icons a {
+  display: inline-flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* change color of icons */
+.icon {
+  fill: var(--visited-color);
+  cursor: pointer;
+}
+
+/* change color of icons on hover */
+.icon:hover {
+  fill: var(--hover-color);
+}
+
+/* === FOOTER === */
 
 footer {
   position: static;
@@ -413,4 +490,3 @@ footer {
   font-size: 60%;
   padding: 10px 0;
 }
-
