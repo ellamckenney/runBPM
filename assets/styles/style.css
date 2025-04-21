@@ -307,6 +307,7 @@ nav > *:not(.dropdown-content) {
 .song-list {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
   margin-bottom: 10px;
