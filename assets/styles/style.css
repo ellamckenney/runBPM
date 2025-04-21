@@ -9,6 +9,10 @@
   --accent-color: #ddd;
   --hover-color: #ddd;
   --visited-color: #2b1897;
+  --p1-color: #2b1897;
+  --icon-color: #2b1897;
+  --add-btn-color: #E88137;
+  --add-btn-text: #eee;
 }
 
 /* Dark mode overrides */
@@ -18,8 +22,12 @@
   --text-color: #efefef;
   --secondary-color: #000;
   --accent-color: #eee;
-  --hover-color: #444;
+  --hover-color: #E88137;
   --visited-color: #2b1897;
+  --p1-color: #E88137;
+  --icon-color: #eee;
+  --add-btn-color: #000;
+  --add-btn-text: #eee;
 }
 
 /* === GLOBAL STYLES === */
@@ -87,6 +95,17 @@ input {
   font-size: 19px;
 }
 
+#output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#output p {
+  margin: 0;
+}
+
 /* === HEADER & NAV === */
 
 header {
@@ -101,7 +120,6 @@ header {
   left: 0;
   padding: 5px 20px;
   height: 60px;
-  z-index: 999;
 }
 
 .logo-container {
@@ -270,6 +288,16 @@ nav > *:not(.dropdown-content) {
   align-items: center;
 }
 
+#goto-playlist {
+  text-decoration: none;
+  color: #eee;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* === SONG CARDS === */
 
 .recommended-songs {
@@ -286,7 +314,7 @@ nav > *:not(.dropdown-content) {
   width: 100%;
 }
 
-.song-card {
+.song-card, .playlist-song-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -302,6 +330,7 @@ nav > *:not(.dropdown-content) {
   flex-direction: column;
   justify-content: center;
   text-align: left;
+  flex: 1;
 }
 
 .song-info h2 {
@@ -316,6 +345,8 @@ nav > *:not(.dropdown-content) {
 }
 
 .song-bpm {
+  display: flex;
+  flex-direction: column;
   text-align: right;
 }
 
@@ -333,16 +364,32 @@ nav > *:not(.dropdown-content) {
 }
 
 /* Playlist-specific classes */
+
+.add-playlist-btn {
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  align-items: flex-end;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
 .added-label {
-  font-weight: bold;
-  color: #3E9E6F;
-  margin-left: 10px;
+  display: flex;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 16px;
+  border: none;
+  border-radius: 9px;
+  padding: 10px 20px;
+  margin: 20px;
 }
 
 .disabled-add {
-  background-color: #ccc;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
   cursor: default;
+  font-size: 18px;
 }
 
 .column-layout {
@@ -351,19 +398,24 @@ nav > *:not(.dropdown-content) {
 
 .playlist-toggle-btn {
   font-size: 18px;
-  margin-left: 10px;
+  background-color: var(--icon-color);
+  color: var(--secondary-color);
 }
 
 .playlist-song-list {
   margin-top: 10px;
+  display: inline;
+  background-color: var(--secondary-color);
 }
 
 .playlist-song-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 0;
-  border-top: 1px solid #ccc;
+  background-color: #b8b0cc;
+  padding: 10px 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .playlist-song-controls {
@@ -377,6 +429,37 @@ nav > *:not(.dropdown-content) {
 
 .hidden {
   display: none;
+}
+
+/* playlist controls */
+
+.remove-playlist-btn {
+  font-size: 13px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background-color: var(--add-btn-color);
+  color: var(--add-btn-text);
+}
+
+.clear-playlist-btn {
+  display: block;
+  margin: auto;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.playlist-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto; /* horizontal center */
+  text-align: center;
+  font-size: 16px;
+  max-width: 1000px;
+  padding: 5px;
+  text-decoration: none;
 }
 
 /* === THE IDEA === */
@@ -433,6 +516,21 @@ nav > *:not(.dropdown-content) {
 
 /* === MEET THE TEAM === */
 
+/* styling the meet the team page information */
+.text {
+  color:var(--p1-color);
+  font-family: sans-serif, "Times New Roman", Tahoma;
+  padding-left: 20px;
+  font-size: 35px;
+}
+
+.about {
+  display: flex;
+  color: var(--text-color);
+  font-family: sans-serif, "Times New Roman", Tahoma;
+  font-size: 18px;
+}
+
 /* creating flex boxes and centering content on the team page */
 .meet-the-team {
   display: flex;
@@ -471,7 +569,7 @@ nav > *:not(.dropdown-content) {
 
 /* change color of icons */
 .icon {
-  fill: var(--visited-color);
+  fill: var(--icon-color);
   cursor: pointer;
 }
 

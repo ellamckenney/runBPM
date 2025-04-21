@@ -32,11 +32,60 @@ img {
     text-align: left;
   }
 
-  /* ensure bpm element spans full width with a left align and top margins */
+  /* ensure song info and bpm element spans full width with a left align and top margins */
+  .song-info,
   .song-bpm {
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    padding: 5px;
     width: 100%;
-    text-align: left;
-    margin-top: 10px;
+    max-width: 900px;
+  }
+  
+  .added-label,
+  .add-playlist-btn {
+    font-size: 18px;
+    padding: 8px 16px;
+    margin: 15px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto; /* horizontal center */
+    text-align: center;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+  
+  .playlist-song-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  .playlist-song-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .remove-playlist-btn {
+    margin-top: 8px;
+    margin-bottom: 3px;
+  } 
+  
+  .playlist-song-controls {
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .empty-message {
+    font-size: 18px;
+    padding: 10px;
   }
 
   /* adjust font and padding for mobile idea page */
@@ -62,6 +111,18 @@ img {
   .temp_pic {
     padding-left: 10px;
     max-width: 80%;
+  }
+
+  .text {
+    padding: 20px;
+    margin: 30px auto;
+    width: 95%;
+  }
+
+  .about {
+    padding: 20px;
+    margin: 30px auto;
+    width: 95%;
   }
 }
 
@@ -156,6 +217,40 @@ img {
     padding: 0 10px;
   }
 
+  .playlist-header {
+    font-size: 15px;
+  }
+  
+  .added-label,
+  .add-playlist-btn {
+    text-align: center;
+    font-size: 16px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto; /* horizontal center */
+    text-align: center;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 14px;
+  }
+  
+  .playlist-song-item {
+    padding: 5px 0;
+    align-items: center;
+  }
+  
+  .playlist-song-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .empty-message {
+    font-size: 16px;
+    padding: 8px;
+  }  
+
   /* adjust font and padding for mobile idea page */
   .message {
     font-size: 18px;
@@ -191,6 +286,20 @@ img {
     align-items: center;
     padding-bottom: 30px;
     max-width: 60%;
+  }
+
+  .text {
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about {
+    margin: auto;
+    padding: 1px;
+    text-align: center;
+    align-items: center;
   }
 
   /* shrink footer to fit mobile */
@@ -282,6 +391,37 @@ img {
   .message p {
     padding: 15px;
   }
+  
+  .added-label,
+  .add-playlist-btn {
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .playlist-toggle-btn {
+    font-size: 12px;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .playlist-song-item {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .playlist-song-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .empty-message {
+    font-size: 14px;
+  }  
 
   /* resize meet the team text */
   .meet-the-team {
@@ -297,5 +437,15 @@ img {
     align-items: center;
     padding-bottom: 30px;
     max-width: 40%;
+  }
+
+  .text {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .about p {
+    padding: 10px;
+    font-size: 14px;
   }
 }
