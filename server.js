@@ -27,7 +27,7 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-// Optional: redirect "/" to search.html
+// redirect "/" to search.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'search.html'));
 });
