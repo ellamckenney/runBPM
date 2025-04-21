@@ -126,6 +126,7 @@ img {
   }
 }
 
+
 /* styles and media queries for screens smaller than 768px (mobile ideal) */
 @media (max-width: 768px) {
   /* adjust header layout for smaller viewports */
@@ -133,17 +134,31 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    position: relative;
     padding: 10px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+  }
+
+  /* Fix hamburger menu positioning */
+  .dropdown {
+    position: relative;
+    margin-right: 10px; /* Add space between hamburger and logo */
   }
 
   /* sets logo to be in the absolute center as needed */
   .logo-container {
     position: absolute;
-    left: 50%;
+    left: 55%; /* Shift slightly right from center */
     transform: translateX(-50%);
     text-align: center;
     margin: 0;
+    z-index: 1;
   }
 
   /* shrink logo size to fit smaller viewports */
@@ -164,25 +179,14 @@ img {
     gap: 10px;
   }
 
-  /* show nav items in horizontal row */
-  nav {
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  /* flatten dropdown down */
-  .dropdown-content {
-    position: absolute;
-    box-shadow: none;
-  }
+ 
 
   /* setting position for dark mode */
   #dark-mode {
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 1000;
   }
 
   /* ensure search bar and filters are more responsive on mobile  */
@@ -311,18 +315,29 @@ img {
 
 /* styles and media queries for screens smaller than 480px */
 @media (max-width: 480px) {
-
   header {
-    flex-direction: column;
-    align-items: center;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
     padding: 10px;
+    
   }
 
-   /* adjust button width */
-   button {
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+  }
+
+  /* Further adjust hamburger menu and logo positioning */
+ 
+  
+
+
+  /* adjust button width */
+  button {
     width: 100%;
   }
 
@@ -336,24 +351,21 @@ img {
     display: none;
   }
 
-  /* shrink dropdown button */
-  .dropdown-menu {
-    display: block;
-  }
+  
 
   /* shrink dark mode for mobile */
   #dark-mode {
+    position: absolute;
+    right: 10px;
+    top: 10px;
     padding: 6px;
     margin: 0;
-    margin-top: 10px;
-    position: absolute;
-    align-items: center;
+    z-index: 1000;
   }
 
   #dark-mode svg {
     width: 20px;
     height: 20px;
-    position: absolute;
   }
 
   /* shrink search bar */
@@ -387,7 +399,7 @@ img {
   }
 
   /* add more padding to the song cards */
-  .song-card
+  .song-card,
   .message p {
     padding: 15px;
   }
