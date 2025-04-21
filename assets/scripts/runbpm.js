@@ -135,6 +135,7 @@ function displayResults(songs, output) {
     if (isBPMSearch && currentBPM) {
       const addBtn = document.createElement("button");
       addBtn.innerText = "Add to Playlist";
+      addBtn.classList.add("add-playlist-btn");
 
       addBtn.onclick = () => {
         const playlistName = `${currentBPM} BPM Songs`;
@@ -232,6 +233,7 @@ function showPlaylist() {
 
       const removeBtn = document.createElement("button");
       removeBtn.innerText = "Remove";
+      removeBtn.className = "remove-playlist-btn";
       removeBtn.onclick = () => {
         playlists[playlistName].splice(index, 1);
         localStorage.setItem("playlists", JSON.stringify(playlists));
@@ -249,6 +251,7 @@ function showPlaylist() {
 
     const clearBtn = document.createElement("button");
     clearBtn.innerText = "Clear Playlist";
+    clearBtn.className = "clear-playlist-btn";
     clearBtn.onclick = () => {
       if (confirm(`Are you sure you want to delete all songs from "${playlistName}"?`)) {
         delete playlists[playlistName];
