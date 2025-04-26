@@ -13,6 +13,7 @@
   --icon-color: #2b1897;
   --add-btn-color: #E88137;
   --add-btn-text: #eee;
+  --song-item: #b5aec4;
 }
 
 /* Dark mode overrides */
@@ -28,6 +29,7 @@
   --icon-color: #eee;
   --add-btn-color: #000;
   --add-btn-text: #eee;
+  --song-item: #2b1897;
 }
 
 /* === GLOBAL STYLES === */
@@ -413,7 +415,7 @@ nav > *:not(.dropdown-content) {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #b8b0cc;
+  background-color: var(--song-item);
   padding: 10px 15px;
   border-radius: 12px;
   margin-bottom: 12px;
