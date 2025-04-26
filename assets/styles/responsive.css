@@ -33,34 +33,31 @@ img {
   }
 
   /* ensure song info and bpm element spans full width with a left align and top margins */
-  .song-info,
-  .song-bpm {
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-    padding: 5px;
-    width: 100%;
-    max-width: 900px;
+  .added-label,
+  .add-playlist-btn,
+  .playlist-toggle-btn,
+  .playlist-song-item,
+  .playlist-song-list,
+  .playlist-song-controls,
+  .empty-message {
+    text-align: center;
   }
   
   .added-label,
   .add-playlist-btn {
     font-size: 18px;
     padding: 8px 16px;
-    margin: 15px;
-    text-align: center;
+    margin: 10px auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px auto; /* horizontal center */
-    text-align: center;
   }
-  
+
   .playlist-toggle-btn {
     font-size: 16px;
     margin-left: 8px;
   }
-  
+
   .playlist-song-item {
     flex-direction: column;
     align-items: center;
@@ -72,17 +69,17 @@ img {
     align-items: center;
   }
 
-  .remove-playlist-btn {
-    margin-top: 8px;
-    margin-bottom: 3px;
-  } 
-  
   .playlist-song-controls {
     justify-content: flex-start;
     gap: 10px;
     flex-wrap: wrap;
   }
-  
+
+  .remove-playlist-btn {
+    margin-top: 8px;
+    margin-bottom: 3px;
+  }
+
   .empty-message {
     font-size: 18px;
     padding: 10px;
@@ -91,8 +88,7 @@ img {
   /* adjust font and padding for mobile idea page */
   .message {
     font-size: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px;
   }
 
   .message p {
@@ -101,7 +97,9 @@ img {
     width: 100%;
   }
 
-  .meet-the-team {
+  .meet-the-team,
+  .text,
+  .about {
     padding: 20px;
     margin: 30px auto;
     width: 95%;
@@ -112,25 +110,12 @@ img {
     padding-left: 10px;
     max-width: 80%;
   }
-
-  .text {
-    padding: 20px;
-    margin: 30px auto;
-    width: 95%;
-  }
-
-  .about {
-    padding: 20px;
-    margin: 30px auto;
-    width: 95%;
-  }
 }
-
 
 /* styles and media queries for screens smaller than 768px (mobile ideal) */
 @media (max-width: 768px) {
   /* adjust header layout for smaller viewports */
-  header {
+  header, nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,9 +124,7 @@ img {
   }
 
   nav {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     position: static;
   }
 
@@ -178,8 +161,6 @@ img {
     flex-direction: column;
     gap: 10px;
   }
-
- 
 
   /* setting position for dark mode */
   #dark-mode {
@@ -258,18 +239,19 @@ img {
   /* adjust font and padding for mobile idea page */
   .message {
     font-size: 18px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 
   .message p {
     font-size: 16px;
     padding: 12px;
-    width: 100%; 
-    align-content: center;
+    width: 100%;
+    text-align: center;
   }
 
-  .meet-the-team {
+  .meet-the-team,
+  .text,
+  .about {
     margin: auto;
     padding: 1px;
     text-align: center;
@@ -292,20 +274,6 @@ img {
     max-width: 60%;
   }
 
-  .text {
-    margin: auto;
-    padding: 1px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .about {
-    margin: auto;
-    padding: 1px;
-    text-align: center;
-    align-items: center;
-  }
-
   /* shrink footer to fit mobile */
   footer {
     font-size: 10px;
@@ -315,26 +283,18 @@ img {
 
 /* styles and media queries for screens smaller than 480px */
 @media (max-width: 480px) {
-  header {
+  header, nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 10px;
-    
   }
 
   nav {
-    display: flex;
     flex-direction: row;
-    align-items: center;
     position: static;
   }
-
-  /* Further adjust hamburger menu and logo positioning */
- 
-  
-
 
   /* adjust button width */
   button {
@@ -350,8 +310,6 @@ img {
   .home-btn {
     display: none;
   }
-
-  
 
   /* shrink dark mode for mobile */
   #dark-mode {
@@ -405,18 +363,12 @@ img {
   }
   
   .added-label,
-  .add-playlist-btn {
+  .add-playlist-btn,
+  .playlist-toggle-btn {
     font-size: 14px;
     display: block;
     text-align: center;
     width: 100%;
-  }
-  
-  .playlist-toggle-btn {
-    font-size: 12px;
-    margin-left: 0;
-    width: 100%;
-    text-align: center;
   }
   
   .playlist-song-item {
