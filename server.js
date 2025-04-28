@@ -27,11 +27,6 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-// redirect "/" to search.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'search.html'));
-});
-
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
 });
