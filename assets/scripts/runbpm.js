@@ -1,4 +1,5 @@
 let currentBPM = null;
+let currentSearchTerm = null;
 let isBPMSearch = false;
 
 // Initialize the search functionality
@@ -33,6 +34,8 @@ function createSearch(input, typeSelector, output) {
     output.innerHTML = "<p>Please enter a value.</p>";
     return;
   }
+  currentSearchTerm = inputVal;
+
 
   output.innerHTML = `<p>Searching for "${inputVal}"...</p>`;
 
@@ -62,7 +65,7 @@ async function fetchSongsByName(songName, output) {
     displayResults(data.search.slice(0, 25), output);
   } catch (error) {
     console.error("Error fetching song data:", error);
-    output.innerHTML = `<p>There was an error fetching song data. Try again later.</p>`;
+    output.innerHTML = `<p>There was an error fetching song data. Make sure to select Search by BPM if you are trying to enter a BPM.</p>`;
   }
 }
 
@@ -74,7 +77,7 @@ async function fetchSongsByBPM(bpm, output) {
     const data = await response.json();
 
     if (!data.tempo || data.tempo.length === 0) {
-      output.innerHTML = `<p>No songs found for BPM "${bpm}". Try another BPM.</p>`;
+      output.innerHTML = `<p>No songs found for BPM "${bpm}". Try another BPM or switch to searching by Song Name.</p>`;
       return;
     }
 
@@ -94,17 +97,21 @@ async function fetchSongsByBPM(bpm, output) {
     displayResults(songs.slice(0, 20), output);
   } catch (error) {
     console.error("Error fetching song data:", error);
-    output.innerHTML = `<p>There was an error fetching song data. Try again later.</p>`;
+    output.innerHTML = `<p>There was an error fetching song data. Try again later. (User entered BPM that is out of range or the API is down)</p>`;
   }
 }
 
 function displayResults(songs, output) {
   // Set the heading depending on search type
+  
   if (isBPMSearch && currentBPM) {
     output.innerHTML = `<h2>Search Results for ${currentBPM} BPM</h2>`;
+  } else if (currentSearchTerm) {
+    output.innerHTML = `<h2>Search Results for "${currentSearchTerm}"</h2>`;
   } else {
     output.innerHTML = "<h2>Search Results</h2>";
   }
+
 
   output.classList.add("recommended-songs");
 
