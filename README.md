@@ -29,3 +29,4 @@ BPM is not used by just runners, however. Musicians, dancers, video editors, and
 ## Resources
 
 - URL for shared project presentation or similar material: https://docs.google.com/presentation/d/11oHWdaj7SRustTTdeXqjkNTHd9h1EK7_NTQjJxBuiy4/edit?usp=sharing
+- Live deployment of site is on nathworld.org
