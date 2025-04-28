@@ -7,7 +7,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname))); // Serve all root files
 
-
+// Explicitly serve index.html at /
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // API proxy route
 app.get('/api/search', async (req, res) => {
