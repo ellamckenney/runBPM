@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname))); // Serve all root files
 
+
+
 // API proxy route
 app.get('/api/search', async (req, res) => {
   const { type, query } = req.query;
